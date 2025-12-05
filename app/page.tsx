@@ -1,9 +1,14 @@
+import { Button } from '@/components/ui/button'
 import React from 'react'
 
-const page = () => {
+type Props = {}
+
+export default function Home({}: Props) {
   return (
-    <div>page</div>
+    <div className='flex justify-center items-center h-screen'>
+      <Button>
+        Welcome to the Home Page
+      </Button>
+    </div>
   )
 }
-
-export default page
