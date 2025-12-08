@@ -18,13 +18,12 @@ export default function NavItems({}: Props) {
         return pathname.startsWith(path)
     }
   return (
-    <div className='flex flex-col sm:flex-row p-2 gap-3 sm:gap-10 '>
+    <div className='flex flex-col sm:flex-row p-2 gap-3 sm:gap-10 font-medium '>
         {NAV_ITEMS.map(({href,name})=>(
-            <li key={href}>
-                <Link href={href} className={`hover:text-yellow-500 transition-colors ${isActive(href)? 'text-gray-200':''}`}>
-                {name}
+            <ul key={href}>
+                <Link href={href} className={`hover:text-yellow-500 transition-colors ${isActive(href)? 'text-gray-200':''}`}>{name}
                 </Link>
-            </li>
+            </ul>
         ))}
     </div>
   )
