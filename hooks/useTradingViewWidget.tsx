@@ -24,6 +24,15 @@ const useTradingViewWidget = ({scriptUrl,config}: Props, height=600) => {
       script.async = true;
       script.innerHTML = JSON.stringify(config);
         
+      containerRef.current.appendChild(script);
+      containerRef.current.dataset.loaded = "true";
+
+      return () => {
+        if (containerRef.current) {
+          containerRef.current.innerHTML = "";
+          delete containerRef.current.dataset.loaded;
+        }
+      };
 
     },
     [scriptUrl, config,height]
