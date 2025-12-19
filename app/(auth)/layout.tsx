@@ -26,10 +26,23 @@ export default function layout({children}: Props) {
        Signalist turned my watchlist into a winning list. The alerts are spot-on, and I feel more confident making moves in the market
     </blockquote>
     <div className='flex items-center justify-between'>
-        <cite className='auth-testimonial-author'>-Surya S</cite>
-        <p className='max-md:text-xs text-gray-500'> Retail Investor</p>
+        <div>
+            <cite className='auth-testimonial-author'>-Surya S</cite>
+            <p className='max-md:text-xs text-gray-500'> Retail Investor</p>
+        </div>
+          <div className='flex items-center gap-0.5'>
+        {[1,2,3,4,5].map((star)=>(
+            <Image key={star} src={"/assets/icons/star.svg"} width={20} height={20} alt='star' className='size-5'/>
+        ))}
     </div>
+    </div>
+  
 </div>
+<div className='flex-1 relative'>
+    <Image src={"/assets/images/dashboard.png"} width={1440} height={1150} alt='auth right bg' className='auth-dashboard-preview absolute top-0'/>
+    
+</div>
+
 </section>
 
 
