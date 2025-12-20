@@ -2,7 +2,7 @@
 import InputField from '@/components/forms/InputField'
 import SelectField from '@/components/forms/SelectField'
 import { Button } from '@/components/ui/button'
-import { INVESTMENT_GOALS } from '@/lib/constants'
+import { INVESTMENT_GOALS, PREFERRED_INDUSTRIES, RISK_TOLERANCE_OPTIONS } from '@/lib/constants'
 import React from 'react'
 import { useForm, SubmitHandler } from "react-hook-form"
 
@@ -54,14 +54,36 @@ try {
     <InputField name="password" label="Password" type="password" placeholder="Create a password" register={register} error={errors.password} validation={{ required: "Password is required", minLength: { value: 8, message: "Password must be at least 6 characters long" } }} />
     
     <SelectField
-     name="investmentGoals  "   
+     name="investmentGoals"   
         label="Investment Goals"
         placeholder="Select your investment goals"
         options = {INVESTMENT_GOALS}
         control ={control}
         error={errors.investmentGoals}
+        required
         
     />
+      <SelectField
+     name="riskTolerance"   
+        label="Risk Tolerance"
+        placeholder="Select your risk tolerance"
+        options = {RISK_TOLERANCE_OPTIONS}
+        control ={control}
+        error={errors.riskTolerance}
+        required
+        
+    />
+      <SelectField
+     name="preferredIndustry"   
+        label="Preferred Industry"
+        placeholder="Select your preferred industry"
+        options = {PREFERRED_INDUSTRIES}
+        control ={control}
+        error={errors.preferredIndustry}
+        required
+        
+    />
+     
 
     
     
