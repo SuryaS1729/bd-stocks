@@ -1,4 +1,6 @@
 'use client'
+
+import { CountrySelectField } from '@/components/forms/CountryFieldSelect'
 import InputField from '@/components/forms/InputField'
 import SelectField from '@/components/forms/SelectField'
 import { Button } from '@/components/ui/button'
@@ -24,7 +26,7 @@ export default function SignUp({}: Props) {
     fullName: '',
     email: '',
     password: '',
-    country: "India",
+    country: "IN",
     investmentGoals:'Growth',
     riskTolerance:'Medium',
     preferredIndustry:'Technology'
@@ -52,7 +54,13 @@ try {
     validation={{ required: "Full name is required", minLength: { value: 2, message: "Full name must be at least 2 characters long" } }} />
     <InputField name="email" label="Email Address" placeholder="Enter your email address" register={register} error={errors.email} validation={{ required: "Email is required", pattern: { value: /^\S+@\S+$/i, message: "Invalid email address" } }} />
     <InputField name="password" label="Password" type="password" placeholder="Create a password" register={register} error={errors.password} validation={{ required: "Password is required", minLength: { value: 8, message: "Password must be at least 6 characters long" } }} />
-    
+    <CountrySelectField
+        name="country"
+        label="Country"
+        control={control}
+        error={errors.country}
+        required
+    />
     <SelectField
      name="investmentGoals"   
         label="Investment Goals"
